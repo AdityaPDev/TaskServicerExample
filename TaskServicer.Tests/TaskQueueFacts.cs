@@ -17,7 +17,7 @@ namespace TaskServicer.Tests
         Random random = new Random();
 
         [TestMethod]
-        public void sdf_sdf_sdf()
+        public void EnqueueTask_AlwaysAddOneTask_ToQueue()
         {
             // Arrange
             var sut = this.CreateSystemUnderTest();
@@ -39,7 +39,7 @@ namespace TaskServicer.Tests
         }
 
         [TestMethod]
-        public void sdf_sdf_sdf1()
+        public void DequeueTask_AlwaysReleaseOneTask_FromQueue()
         {
             // Arrange
             var sut = this.CreateSystemUnderTest();
@@ -84,10 +84,6 @@ namespace TaskServicer.Tests
             // Assert
         }
 
-        private void abc()
-        {
-
-        }
 
         private TaskQueue CreateSystemUnderTest()
         {
