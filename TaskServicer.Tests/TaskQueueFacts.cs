@@ -29,7 +29,7 @@ namespace TaskServicer.Tests
                 // Used to Generate Random String
                 RandomString = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 5).Select(s => s[random.Next(s.Length)]).ToArray())
             };
-            var h = new Action(abc);
+            var h = new Action(DoSomeAction);
 
             // Act
             sut.EnqueueTask(h);
@@ -51,7 +51,7 @@ namespace TaskServicer.Tests
                 // Used to Generate Random String
                 RandomString = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 5).Select(s => s[random.Next(s.Length)]).ToArray())
             };
-            var h = new Action(abc);
+            var h = new Action(DoSomeAction);
             sut.EnqueueTask(h);
 
 
@@ -62,29 +62,9 @@ namespace TaskServicer.Tests
             sut._workTaskQueue.Count.ShouldBe(0);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
-        public void sdf_sdf_sdf2()
-        {
-            // Arrange
-            var sut = this.CreateSystemUnderTest();
-            var queue = new QueuedObject
-            {
-                QueueID = 1,
-                AdderThreadID = Thread.CurrentThread.ManagedThreadId,
-                EnqueueDateTime = DateTime.Now,
-                // Used to Generate Random String
-                RandomString = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 5).Select(s => s[random.Next(s.Length)]).ToArray())
-            };
-            var h = new Action(abc);
+        
 
-            // Act
-            sut.Close();
-            var g = Should.Throw<InvalidOperationException>(() => sut.EnqueueTask(h));
-            // Assert
-        }
-
-        private void abc()
+        private void DoSomeAction()
         {
 
         }

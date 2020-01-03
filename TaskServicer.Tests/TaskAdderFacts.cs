@@ -24,26 +24,7 @@ namespace TaskServicer.Tests
             sut._taskQueue._workTaskQueue.Count.ShouldBe(4);
         }
 
-        [TestMethod]
-        public void ReverseString_sdf_sdf()
-        {
-            // Arrange
-            //var sut = this.CeateSystemUnderTest();
-            //var queue = new QueuedObject
-            //{
-            //    QueueID = 1,
-            //    AdderThreadID = Thread.CurrentThread.ManagedThreadId,
-            //    EnqueueDateTime = DateTime.Now,
-            //    // Used to Generate Random String
-            //    RandomString = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 5).Select(s => s[random.Next(s.Length)]).ToArray())
-            //};
-
-            //// Act
-            //sut.ReverseString(queue);
-
-            //// Assert
-            //sut.
-        }
+        
 
         private TaskAdder CeateSystemUnderTest()
         {
