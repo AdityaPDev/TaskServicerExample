@@ -1,0 +1,20 @@
+Installed the below Serilog packages
+====================================
+1. install-package serilog (*)
+2. Install-Package Serilog.Sinks.Console (*)
+3. Install-Package Serilog.Enrichers.Thread (*)
+4. Install-Package Serilog.Sinks.File (*)
+5. Install-Package Serilog.Formatting.Compact (*)
+
+
+Questions
+=========
+1. Serilog
+2. BlockingCollection
+3. IProducerConsumerCollection<Task> workTaskCollection
+	4. public delegate void TaskEventsHandler(TaskProcessingArguments e);
+	5. public event TaskEventsHandler TaskStatus -- ;
+	6. _workTaskQueue.GetConsumingEnumerable()
+	7. // Subscribe to Queue Processing Events
+				taskQueue.TaskStatus += WorkQueue_TaskStatus;
+8.
